@@ -1,0 +1,209 @@
+
+
+/* Nonspecific elements*/
+
+body {
+    background-color: #111;
+    color: white;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans';
+
+}
+
+h1 {
+    font-family: 'Open Sans';
+    font-weight: 100;
+    font-variant: small-caps
+}
+
+a {
+    color: rgba(255,99,99,.5);
+    font: 20px arial, sans-serif;
+    font-style: italic;
+    font-variant: small-caps;
+    text-decoration: none;
+}
+
+
+
+a:hover {
+    color: rgba(255,99,99,1);
+
+}
+
+/************************************Dynamic section**********************************/
+
+#date-time {
+    font-family: "Open Sans";
+}
+
+#date {
+
+}
+
+
+
+/**************************The link boxes**************************************/
+
+.link-container {
+    position: absolute;
+    align-content: center;
+    top: 50%;
+    height: 50%;
+    width: 100%;
+
+
+}
+
+.linkarea {
+
+    padding: 2%;
+
+}
+
+.linkarea .inner{
+
+    text-align: center;
+    background-color: #222;
+
+
+}
+
+
+.links:hover, #settings-overlay {
+
+    background-color: #222;
+    box-shadow: 0px 0px 20px 5px rgba(255,99,99,1);
+
+}
+
+/*****************************Settings********************************************/
+
+/*The Settings overlay panel*/
+
+#settings-overlay {
+    visibility: hidden;
+    z-index: 1000;
+    display: block;
+    position:fixed; top: 10%; left: 5%; right:5%; bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    overflow: hidden;
+    padding-bottom: 10%
+}
+
+#settings-overlay-bg {
+    visibility: hidden;
+    position: fixed;
+    z-index:900;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: black;
+    opacity: .5;
+}
+
+/*The Settings header*/
+#settings-header {
+    font-variant: small-caps;
+    margin-left: 40px;
+    margin-top:  10px;
+    font-weight: 400;
+}
+
+
+#settings-container {
+    position: absolute;
+    top: 50px; bottom: 40px; left: 10px; right: 10px;
+    background-color: #111111;
+
+
+}
+
+#settings-container ul {
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#settings-container li{
+    display: block;
+    text-align: center;
+    width: 200px;
+
+
+}
+
+#settings-container li:hover {
+      background: rgba(255,255,255,0.1);
+}
+
+#settings-container ul a, #selected {
+    display: block;
+    color: white;
+    font-style: normal;
+    font: 16px 'Open Sans', sans-serif;
+    font-weight: 300;
+    padding: 10px;
+
+}
+
+#selected, #selected:hover {
+    background-color: rgba( 255, 255, 255, 0.25) !important;
+
+}
+
+#settings-content {
+    position: absolute;
+    top: 0; left: 200px; right: 0; bottom: 0;
+    background-color: #1A1A1A;
+}
+
+#settings-footer {
+    position: absolute;
+    bottom: 0px;
+    height: 40px;
+    width: 100%;
+}
+
+#settings-footer-buttons {
+      margin-top: 7px;
+}
+#settings-footer-buttons li{
+    display: inline;
+    margin-left: 10px;
+
+}
+
+.button {
+    padding: 2px 20px;
+    border: 2px solid rgba(255,99,99,.5);
+    background-color: transparent;
+    color: rgba(255,99,99,.5);
+    font: 20px arial, sans-serif;
+    font-style: italic;
+    font-variant: small-caps;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgba(255,255,255,.25);
+    border: 2px solid rgba(255,99,99,1);
+    color: rgba(255,99,99,1);
+}
+
+#settings-btn {
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+    opacity: .75;
+    width: 24px;
+    height: 24px;
+}
+
+#settings-btn:hover {
+    opacity: 1;
+}
+

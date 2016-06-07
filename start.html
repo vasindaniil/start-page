@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>New Session</title>
+
+        <!--<script src="assets/libs/jquery-1.12.4.js"></script>-->
+        <script src="assets/libs/jquery-1.12.4.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+        <!--<script src="assets/libs/bootstrap-3.3.6-dist/js/bootstrap.js"></script>-->
+        <script src="assets/libs/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+        <!--<link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap.css">-->
+        <link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel='stylesheet' >
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+        <!--<link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap-theme.css">-->
+        <!--<link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" rel='stylesheet' >-->
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400&subset=cyrillic,cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+        <script src="script.js"></script>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+
+    </head>
+    <body onload="setInterval(displayTD,1000)">
+        <div id="dynamic-infobox">
+            <div id="date-time">
+                <div id="time"></div>
+                <div id="date"></div>
+            </div>
+
+        </div>
+        <div id="search"></div>
+
+        <div class="container link-container">
+            <div class="row">
+                <div class="col-md-1 col-md-offset-2 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-1 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-1 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-1 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-1 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-1 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-1 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <!--Settings layout-->
+        <div id="settings-overlay-bg"></div>
+        <div id="settings-overlay">
+            <h1 id="settings-header">Settings</h1>
+            <div id="settings-container">
+                <ul id="tabs">
+                    <li id="selected">GENERAL</li>
+                    <li><a href="#">LINKS</a></li>
+                </ul>
+                <div id="settings-content">
+                    Test
+                </div>
+            </div>
+            <div id="settings-footer">
+                <ul id="settings-footer-buttons">
+                    <li><a href="#" class="button">OK</a></li>
+                    <li><input type="button" value="CANCEL" class="button" onclick="visibleSettings('hidden')"/></li>
+                </ul>
+            </div>
+        </div>
+
+        <input type="image" id="settings-btn" src="assets/icons/cog.png" onclick="visibleSettings('visible')"/>
+
+
+
+    </body>
+</html>
