@@ -2,20 +2,20 @@
 <html lang="en">
     <head>
         <title>New Session</title>
-
+        <link rel="shortcut icon" href="favicon.png" type="image/png">
         <!--<script src="assets/libs/jquery-1.12.4.js"></script>-->
-        <script src="assets/libs/jquery-1.12.4.min.js"></script>
+        <!--<script src="assets/libs/jquery-1.12.4.min.js"></script>-->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
         <!--<script src="assets/libs/bootstrap-3.3.6-dist/js/bootstrap.js"></script>-->
-        <script src="assets/libs/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <!--<script src="assets/libs/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 
         <!--<link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap.css">-->
-        <link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel='stylesheet' >
-        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+        <!--<link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel='stylesheet' >-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel='stylesheet'>
         <!--<link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap-theme.css">-->
         <!--<link href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" rel='stylesheet' >-->
 
@@ -37,28 +37,44 @@
 
         <div class="container link-container">
             <div class="row">
-                <div class="col-md-1 col-md-offset-2 linkarea">
+                <div class="col-md-2 linkarea">
                     <div class="inner">Test</div>
                 </div>
-                <div class="col-md-1 linkarea">
+                <div class="col-md-2 linkarea">
                     <div class="inner">Test</div>
                 </div>
-                <div class="col-md-1 linkarea">
+                <div class="col-md-2 linkarea">
                     <div class="inner">Test</div>
                 </div>
-                <div class="col-md-1 linkarea">
+                <div class="col-md-2 linkarea">
                     <div class="inner">Test</div>
                 </div>
-                <div class="col-md-1 linkarea">
+                <div class="col-md-2 linkarea">
                     <div class="inner">Test</div>
                 </div>
-                <div class="col-md-1 linkarea">
+                <div class="col-md-2 linkarea">
                     <div class="inner">Test</div>
                 </div>
-                <div class="col-md-1 linkarea">
+            </div>
+            <div class="row">
+                <div class="col-md-2 linkarea">
                     <div class="inner">Test</div>
                 </div>
-
+                <div class="col-md-2 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-2 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-2 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-2 linkarea">
+                    <div class="inner">Test</div>
+                </div>
+                <div class="col-md-2 linkarea">
+                    <div class="inner">Test</div>
+                </div>
 
             </div>
         </div>
@@ -76,7 +92,33 @@
                     <li><a href="#">LINKS</a></li>
                 </ul>
                 <div id="settings-content">
-                    Test
+                    <h2>Link Layout</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="row-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <b>2</b>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="row-drop">
+                            <li><a href="#" onclick="setRow(1)">1</a></li>
+                            <li><a href="#" onclick="setRow(2)">2</a></li>
+                            <li><a href="#" onclick="setRow(3)">3</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="col-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <b>6</b>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="col-drop">
+                            <li><a href="#" onclick="setCol(1)">1</a></li>
+                            <li><a href="#" onclick="setCol(2)">2</a></li>
+                            <li><a href="#" onclick="setCol(3)">3</a></li>
+                            <li><a href="#" onclick="setCol(4)">4</a></li>
+                            <li><a href="#" onclick="setCol(5)">5</a></li>
+                            <li><a href="#" onclick="setCol(6)">6</a></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
             <div id="settings-footer">

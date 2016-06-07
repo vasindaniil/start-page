@@ -56,9 +56,11 @@ a:hover {
 
 }
 
+
 .linkarea {
 
     padding: 2%;
+
 
 }
 
@@ -66,9 +68,12 @@ a:hover {
 
     text-align: center;
     background-color: #222;
+    height:100% ;
 
 
 }
+
+
 
 
 .links:hover, #settings-overlay {
@@ -80,7 +85,7 @@ a:hover {
 
 /*****************************Settings********************************************/
 
-/*The Settings overlay panel*/
+/**************************The Settings overlay panel*******************************/
 
 #settings-overlay {
     visibility: hidden;
@@ -104,96 +109,7 @@ a:hover {
     opacity: .5;
 }
 
-/*The Settings header*/
-#settings-header {
-    font-variant: small-caps;
-    margin-left: 40px;
-    margin-top:  10px;
-    font-weight: 400;
-}
-
-
-#settings-container {
-    position: absolute;
-    top: 50px; bottom: 40px; left: 10px; right: 10px;
-    background-color: #111111;
-
-
-}
-
-#settings-container ul {
-    width: 200px;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-#settings-container li{
-    display: block;
-    text-align: center;
-    width: 200px;
-
-
-}
-
-#settings-container li:hover {
-      background: rgba(255,255,255,0.1);
-}
-
-#settings-container ul a, #selected {
-    display: block;
-    color: white;
-    font-style: normal;
-    font: 16px 'Open Sans', sans-serif;
-    font-weight: 300;
-    padding: 10px;
-
-}
-
-#selected, #selected:hover {
-    background-color: rgba( 255, 255, 255, 0.25) !important;
-
-}
-
-#settings-content {
-    position: absolute;
-    top: 0; left: 200px; right: 0; bottom: 0;
-    background-color: #1A1A1A;
-}
-
-#settings-footer {
-    position: absolute;
-    bottom: 0px;
-    height: 40px;
-    width: 100%;
-}
-
-#settings-footer-buttons {
-      margin-top: 7px;
-}
-#settings-footer-buttons li{
-    display: inline;
-    margin-left: 10px;
-
-}
-
-.button {
-    padding: 2px 20px;
-    border: 2px solid rgba(255,99,99,.5);
-    background-color: transparent;
-    color: rgba(255,99,99,.5);
-    font: 20px arial, sans-serif;
-    font-style: italic;
-    font-variant: small-caps;
-    text-decoration: none;
-}
-
-.button:hover {
-    background-color: rgba(255,255,255,.25);
-    border: 2px solid rgba(255,99,99,1);
-    color: rgba(255,99,99,1);
-}
-
+/*********************SETTINGS OVERLAY TOGGLE STYLES******************************/
 #settings-btn {
     position: absolute;
     right: 1%;
@@ -205,5 +121,18 @@ a:hover {
 
 #settings-btn:hover {
     opacity: 1;
+}
+
+
+
+/**********************DROPDOWN STYLES*****************************************/
+.dropdown-toggle, .dropdown-toggle:visited,.dropdown-menu,.dropdown-menu>li>a{
+    background-color: #333333;
+    color: white;
+}
+
+.dropdown-toggle:hover, .dropdown-menu>li>a:hover{
+    background-color:#525252;
+    color: white;
 }
 
