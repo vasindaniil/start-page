@@ -83,16 +83,17 @@
 
 
         <!--Settings layout-->
-        <div id="settings-overlay-bg"></div>
+        <div id="settings-overlay-bg" onclick="visibleSettings('hidden')"></div>
         <div id="settings-overlay">
             <h1 id="settings-header">Settings</h1>
             <div id="settings-container">
-                <ul id="tabs">
+                <ul id="settings-tabs" class="btn-group-vertical" role="group">
                     <li id="selected">GENERAL</li>
                     <li><a href="#">LINKS</a></li>
                 </ul>
                 <div id="settings-content">
                     <h2>Link Layout</h2>
+                    Rows:
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="row-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <b>2</b>
@@ -104,6 +105,7 @@
                             <li><a href="#" onclick="setRow(3)">3</a></li>
                         </ul>
                     </div>
+                    Columns:
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="col-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <b>6</b>
@@ -122,9 +124,8 @@
                 </div>
             </div>
             <div id="settings-footer">
-                <ul id="settings-footer-buttons">
-                    <li><a href="#" class="button">OK</a></li>
-                    <li><input type="button" value="CANCEL" class="button" onclick="visibleSettings('hidden')"/></li>
+                <ul id="settings-footer-buttons" class="btn-group" role="group">
+                    <button type="button" class="btn btn-default"value="CLOSE" onclick="visibleSettings('hidden')" id="close-settings">CLOSE</button>
                 </ul>
             </div>
         </div>

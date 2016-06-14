@@ -108,6 +108,61 @@ a:hover {
     background: black;
     opacity: .5;
 }
+/*********************SETTINGS Content********************************************/
+
+#settings-header {
+
+    padding:1%;
+    display:block;
+
+}
+#settings-container {
+    width:100%;
+    min-height:100%;
+    display: flex;
+}
+/****************SETTINGS TABS*************************************/
+#settings-tabs {
+
+    float:left;
+    height:100%;
+    padding:0;
+    bottom:0;
+    background-color:#111111;
+}
+
+#settings-tabs>li {
+    display:block;
+    min-height:100%;
+    padding:10px 25px 10px 25px;
+    background-color:#111111;
+}
+
+#settings-tabs>li:hover {
+    background-color:#1e1e1e;
+}
+
+#settings-tabs>#selected,#settings-tabs>#selected:hover {
+    background-color:#222222;
+}
+/*******************************SETTINGS CONTENT********************/
+#settings-content {
+    margin:2%;
+    width:100%;
+}
+
+#settings-footer {
+
+    position: absolute;
+    left:0;bottom:0;right:0;
+    min-height:10%;
+}
+
+#close-settings {
+    height:50px;
+    width:100px;
+    font-size: medium;
+}
 
 /*********************SETTINGS OVERLAY TOGGLE STYLES******************************/
 #settings-btn {
@@ -125,13 +180,13 @@ a:hover {
 
 
 
-/**********************DROPDOWN STYLES*****************************************/
-.dropdown-toggle, .dropdown-toggle:visited,.dropdown-menu,.dropdown-menu>li>a{
+/**********************BUTTON/DROPDOWN STYLES*****************************************/
+.dropdown-toggle, .dropdown-toggle:visited,.dropdown-menu,.dropdown-menu>li>a, .btn,.btn:visited{
     background-color: #333333;
     color: white;
 }
 
-.dropdown-toggle:hover, .dropdown-menu>li>a:hover{
+.dropdown-toggle:hover, .dropdown-menu>li>a:hover, .btn:hover{
     background-color:#525252;
     color: white;
 }
