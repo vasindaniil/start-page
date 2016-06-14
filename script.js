@@ -132,6 +132,7 @@ function displayTD() {
 }
 
 function setRow(rows) {
+    numRows = rows;
     document.getElementById('row-drop').firstElementChild.innerHTML = rows;
     if (document.getElementsByClassName('row').length > rows){
         while(document.getElementsByClassName('row').length > rows){
@@ -146,18 +147,18 @@ function setRow(rows) {
                 new_inner.className = 'inner';
                 new_inner.innerHTML = 'Test';
                 var new_col = document.createElement('div');
-                new_col.className = 'col-md-2 ';
-                new_col.className+='linkarea';
                 new_col.appendChild(new_inner);
                 new_row.appendChild(new_col);
             }
             document.getElementsByClassName('link-container')[0].appendChild(new_row)
         }
     }
+    resizeCols();
     console.log("New Rows: "+document.getElementsByClassName('row').length);
 }
 
 function setCol(cols){
+    numColumns = cols;
     document.getElementById('col-drop').firstElementChild.innerHTML = cols;
     // Adds or removes columns from existing rows
     console.log("Number of Cols: "+ document.getElementsByClassName('row')[0].children.length);
@@ -177,14 +178,46 @@ function setCol(cols){
                 new_inner.className = 'inner';
                 new_inner.innerHTML = 'Test';
                 var new_col = document.createElement('div');
-                new_col.className = 'col-md-2 ';
-                new_col.className+='linkarea';
                 new_col.appendChild(new_inner);
                 document.getElementsByClassName('row')[i].appendChild(new_col);
             }
         }
     }
+    resizeCols();
     console.log("New Cols: "+document.getElementsByClassName('row')[0].children.length);
+}
+
+function resizeCols(){
+    for(i = 0; i < document.getElementsByClassName('row').length;i++) {
+        for(j = 0; j < document.getElementsByClassName('row')[i].children.length;j++) {
+            switch (parseInt(document.getElementById('col-drop').firstElementChild.innerHTML)){
+                case 1:
+                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-12 ';
+                    break;
+                case 2:
+                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-6 ';
+                    break;
+                case 3:
+                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-4 ';
+                    break;
+                case 4:
+                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-3 ';
+                    break;
+                case 5:
+                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-2 ';
+                    if(j==0) {
+                        document.getElementsByClassName('row')[i].children[j].className += 'col-md-offset-1 ';
+                    }
+                    break;
+                case 6:
+                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-2 ';
+                    break;
+
+            }
+            document.getElementsByClassName('row')[i].children[j].className+='linkarea';
+
+        }
+    }
 }
 
 
