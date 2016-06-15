@@ -1,4 +1,3 @@
-$('.dropdown-toggle').dropdown()
 
 //Cookies Related Variables and Functions
 
@@ -13,6 +12,7 @@ var background_image;
 var font_style;
 
 function getCookies() {
+    //TODO: Implement any extra cookie data as more features are added
     wlocation = getCookie('location');
     searchDefault = getCookie('search');
     if (searchDefault == null){
@@ -58,6 +58,7 @@ function getCookie (cname){
 }
 
 function getCookieLinks() {
+    //TODO: Implement Cookie Links
     var linkCookie = getCookie('links');
     if (linkCookie != null) {
         var linkArray = linkCookie.replace('{', '').split('}');
@@ -67,7 +68,7 @@ function getCookieLinks() {
     }
 }
 
-//Functions
+/////////////////////////////////////INITIALIZATION FUNCTIONS////////////////////////////////////////////////////////
 window.onload = function() {
     getCookies();
     initLayout();
@@ -80,22 +81,21 @@ window.onload = function() {
 }
 
 function initLayout(){
+    //TODO: Implement Initialization of layout fully
+    //TODO: Reimplement via plugin system
     console.log("Search engine: " + searchDefault+"\nColumns: "+numColumns+"\nRows: "+numRows);
     setSearchEngine(searchDefault);
     setCol(numColumns);
     setRow(numRows);
 
 }
-
+///////////////////////////////////////////SEARCH ENGINE FUNCTIONS/////////////////////////////////////////////////////////////
 function setSearchEngine(engine){
     //TODO: Implement Search Engine choosing
 }
 
-function visibleSettings(visibility) {
-    document.getElementById('settings-overlay').style.visibility = visibility;
-    document.getElementById('settings-overlay-bg').style.visibility = visibility;
-}
 
+//////////////////////////////////////////DATETIME WIDGET FUNCTIONS//////////////////////////////////////////////////////////////
 function displayTD() {
     var currDate = new Date();
 
@@ -131,23 +131,23 @@ function displayTD() {
 
 }
 
+////////////////////////////LINK GRID FUNCTIONS/////////////////////////////////////////////////////////////////////////////////////////////////
+//TODO: implement modification of titles and links
+//TODO: Seperate formatting for each row
+//TODO: Decouple into seperate module
 function setRow(rows) {
     numRows = rows;
     document.getElementById('row-drop').firstElementChild.innerHTML = rows;
-    if (document.getElementsByClassName('row').length > rows){
+    if (document.getElementsByClassName('row').length > rows){ //Shrink number of Rows
         while(document.getElementsByClassName('row').length > rows){
             document.getElementsByClassName('link-container')[0].removeChild(document.getElementsByClassName('link-container')[0].lastChild)
         }
-    }else {
+    }else { //Grow number of rows
         while (document.getElementsByClassName('row').length < rows) {
             var new_row = document.createElement('div');
             new_row.className = 'row';
             while (new_row.children.length < parseInt(document.getElementById('col-drop').firstElementChild.innerHTML)) {
-                var new_inner = document.createElement('div');
-                new_inner.className = 'inner';
-                new_inner.innerHTML = 'Test';
-                var new_col = document.createElement('div');
-                new_col.appendChild(new_inner);
+                var new_col = mkColDiv('Links');
                 new_row.appendChild(new_col);
             }
             document.getElementsByClassName('link-container')[0].appendChild(new_row)
@@ -174,11 +174,7 @@ function setCol(cols){
     }else{
         for(i = 0; i < document.getElementsByClassName('row').length;i++) {
             while (document.getElementsByClassName('row')[i].children.length < cols) {
-                var new_inner = document.createElement('div');
-                new_inner.className = 'inner';
-                new_inner.innerHTML = 'Test';
-                var new_col = document.createElement('div');
-                new_col.appendChild(new_inner);
+                var new_col = mkColDiv('Links');
                 document.getElementsByClassName('row')[i].appendChild(new_col);
             }
         }
@@ -220,4 +216,37 @@ function resizeCols(){
     }
 }
 
+function mkColDiv(name){
+    var title = document.createElement('h3');
+    title.className = 'link-header';
+    title.innerHTML = name;
+    var link = document.createElement('a');
+    link.className = 'link';
+    link.href = '#';
+    link.innerHTML = "Sample";
+    var list = document.createElement('div');
+    list.className = 'link-list';
+    list.appendChild(link);
+    var new_inner = document.createElement('div');
+    new_inner.className = 'inner';
+    new_inner.appendChild(title);
+    new_inner.appendChild(list);
+    var new_col = document.createElement('div');
+    new_col.appendChild(new_inner);
+    return new_col;
+}
 
+//////////////////////////////////SETTINGS VISIBILITY////////////////////////////////////////////////////////////////////////////
+function visibleSettings(visibility) {
+    document.getElementById('settings-overlay').style.visibility = visibility;
+    document.getElementById('settings-overlay-bg').style.visibility = visibility;
+    openSetting('general-settings');
+}
+
+function openSetting(setting){
+    document.getElementsByClassName('active-settings-view')[0].style.visibility = 'hidden';
+    document.getElementsByClassName('active-settings-view')[0].className = 'inactive-settings-view';
+    document.getElementById(setting).style.visibility = 'visible';
+    document.getElementById(setting).className='active-settings-view';
+    // document.getElementById(setting+'-btn').focus();
+}

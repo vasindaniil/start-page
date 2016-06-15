@@ -36,47 +36,7 @@
         <div id="search"></div>
 
         <div class="container link-container">
-            <div class="row">
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-                <div class="col-md-2 linkarea">
-                    <div class="inner">Test</div>
-                </div>
-
-            </div>
+            <div class="row"></div>
         </div>
 
 
@@ -88,10 +48,11 @@
             <h1 id="settings-header">Settings</h1>
             <div id="settings-container">
                 <ul id="settings-tabs" class="btn-group-vertical" role="group">
-                    <li id="selected">GENERAL</li>
-                    <li><a href="#">LINKS</a></li>
+                    <a href="#" id='general-settings-btn' onclick="openSetting('general-settings')">GENERAL</a>
+                    <a href="#" id='link-grid-settings-btn' onclick="openSetting('link-grid-settings')">LINKS</a>
                 </ul>
-                <div id="settings-content">
+                    <div id='general-settings' class="active-settings-view"></div>
+                    <div id='link-grid-settings' class="inactive-settings-view">
                     <h2>Link Layout</h2>
                     Rows:
                     <div class="dropdown">

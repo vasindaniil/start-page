@@ -97,7 +97,6 @@ a:hover {
     margin-top: auto;
     margin-bottom: auto;
     overflow: hidden;
-    padding-bottom: 10%
 }
 
 #settings-overlay-bg {
@@ -131,24 +130,37 @@ a:hover {
     background-color:#111111;
 }
 
-#settings-tabs>li {
+#settings-tabs>a {
     display:block;
     min-height:100%;
     padding:10px 25px 10px 25px;
     background-color:#111111;
+    font-style: normal;
+    text-decoration: none;
 }
 
-#settings-tabs>li:hover {
+#settings-tabs>a:hover {
     background-color:#1e1e1e;
+    font-style: normal;
+    text-decoration: none;
 }
 
-#settings-tabs>#selected,#settings-tabs>#selected:hover {
+#settings-tabs>a:hover, #settings-tabs>a:focus{
     background-color:#222222;
+    color: white;
+    font-style: normal;
+    text-decoration: none;
 }
 /*******************************SETTINGS CONTENT********************/
-#settings-content {
-    margin:2%;
-    width:100%;
+.settings-content {
+    margin: 2%;
+    width: 100%;
+}
+.inactive-settings-view {
+    visibility: hidden;
+}
+.active-settings-view {
+    visibility: visible;
 }
 
 #settings-footer {
