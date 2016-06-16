@@ -21,6 +21,7 @@
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400&subset=cyrillic,cyrillic-ext,latin' rel='stylesheet' type='text/css'>
         <script src="script.js"></script>
+        <script src="components/link_grid.js"></script>
         <link href="stylesheet.css" rel="stylesheet" type="text/css">
 
 
@@ -35,8 +36,8 @@
         </div>
         <div id="search"></div>
 
-        <div class="container link-container">
-            <div class="row"></div>
+        <div class="container link-grid-container">
+
         </div>
 
 
@@ -48,46 +49,15 @@
             <h1 id="settings-header">Settings</h1>
             <div id="settings-container">
                 <ul id="settings-tabs" class="btn-group-vertical" role="group">
-                    <a href="#" id='general-settings-btn' onclick="openSetting('general-settings')">GENERAL</a>
-                    <a href="#" id='link-grid-settings-btn' onclick="openSetting('link-grid-settings')">LINKS</a>
+                    <a href="#settings" id='general-settings-btn' onclick="general_settings()">GENERAL</a>
                 </ul>
-                    <div id='general-settings' class="active-settings-view"></div>
-                    <div id='link-grid-settings' class="inactive-settings-view">
-                    <h2>Link Layout</h2>
-                    Rows:
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="row-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <b>2</b>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="row-drop">
-                            <li><a href="#" onclick="setRow(1)">1</a></li>
-                            <li><a href="#" onclick="setRow(2)">2</a></li>
-                            <li><a href="#" onclick="setRow(3)">3</a></li>
-                        </ul>
-                    </div>
-                    Columns:
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="col-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <b>6</b>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="col-drop">
-                            <li><a href="#" onclick="setCol(1)">1</a></li>
-                            <li><a href="#" onclick="setCol(2)">2</a></li>
-                            <li><a href="#" onclick="setCol(3)">3</a></li>
-                            <li><a href="#" onclick="setCol(4)">4</a></li>
-                            <li><a href="#" onclick="setCol(5)">5</a></li>
-                            <li><a href="#" onclick="setCol(6)">6</a></li>
-                        </ul>
-                    </div>
-
+                <div id='general-settings' class="active-settings-view">
+                    <h2>General Settings</h2>
                 </div>
+
             </div>
             <div id="settings-footer">
-                <ul id="settings-footer-buttons" class="btn-group" role="group">
-                    <button type="button" class="btn btn-default"value="CLOSE" onclick="visibleSettings('hidden')" id="close-settings">CLOSE</button>
-                </ul>
+                <button type="button" class="btn btn-default"value="CLOSE" onclick="visibleSettings('hidden')" id="close-settings">CLOSE</button>
             </div>
         </div>
 
