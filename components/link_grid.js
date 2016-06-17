@@ -22,7 +22,6 @@ function init_linkgrid(){
         rows.push(mkRowDiv(arrLinks[i]));
     }
     $(".link-grid-container").append(rows.join(""));
-    resizeCols('m',2);
 }
 
 function getCookies(){
@@ -73,37 +72,37 @@ function link_grid_settings() {
     for (var i = 0;i <rowGrid;i++){
         rowDivs.push(mkMiniRowDiv(rowGrid[i]));
     }
-    var minigrid = "<div class='container mini-grid-container'>"+rowDivs.join("")+"</div>";
-    var content = "<div id='link-grid-settings' class='active-settings-view'>"+
-        "<h2>Link Layout</h2>"+
-        "Rows:"+
-        "<div class='dropdown'>"+
-        "<button class='btn btn-default dropdown-toggle' type='button' id='row-drop' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>"+
-        "<b>"+numRows+"</b>"+
-        "<span class='caret'></span>"+
-        "</button>"+
-        "<ul class='dropdown-menu' aria-labelledby='row-drop'>"+
-        "<li><a href='#' onclick='setRow(1)'>1</a></li>"+
-        "<li><a href='#' onclick='setRow(2)'>2</a></li>"+
-        "<li><a href='#' onclick='setRow(3)'>3</a></li>"+
-        "</ul>"+
-        "</div>"+
-        "Columns:"+
-        "<div class='dropdown'>"+
-        "<button class='btn btn-default dropdown-toggle' type='button' id='col-drop' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>"+
-        "<b>"+numColumns+"</b>"+
-        "<span class='caret'></span>"+
-        "</button>"+
-        "<ul class='dropdown-menu' aria-labelledby='col-drop'>"+
-        "<li><a href='#' onclick='setCol(1)'>1</a></li>"+
-        "<li><a href='#' onclick='setCol(2)'>2</a></li>"+
-        "<li><a href='#' onclick='setCol(3)'>3</a></li>"+
-        "<li><a href='#' onclick='setCol(4)'>4</a></li>"+
-        "<li><a href='#' onclick='setCol(5)'>5</a></li>"+
-        "<li><a href='#' onclick='setCol(6)'>6</a></li>"+
-        "</ul>"+
-        "</div>"+
-        "</div>";
+    var minigrid = "<div class='container mini-grid-container'><h2>Link Layout</h2>"+rowDivs.join("")+"</div>";
+    // var content = "<div id='link-grid-settings' class='active-settings-view'>"+
+    //     "<h2>Link Layout</h2>"+
+    //     "Rows:"+
+    //     "<div class='dropdown'>"+
+    //     "<button class='btn btn-default dropdown-toggle' type='button' id='row-drop' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>"+
+    //     "<b>"+numRows+"</b>"+
+    //     "<span class='caret'></span>"+
+    //     "</button>"+
+    //     "<ul class='dropdown-menu' aria-labelledby='row-drop'>"+
+    //     "<li><a href='#' onclick='setRow(1)'>1</a></li>"+
+    //     "<li><a href='#' onclick='setRow(2)'>2</a></li>"+
+    //     "<li><a href='#' onclick='setRow(3)'>3</a></li>"+
+    //     "</ul>"+
+    //     "</div>"+
+    //     "Columns:"+
+    //     "<div class='dropdown'>"+
+    //     "<button class='btn btn-default dropdown-toggle' type='button' id='col-drop' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>"+
+    //     "<b>"+numColumns+"</b>"+
+    //     "<span class='caret'></span>"+
+    //     "</button>"+
+    //     "<ul class='dropdown-menu' aria-labelledby='col-drop'>"+
+    //     "<li><a href='#' onclick='setCol(1)'>1</a></li>"+
+    //     "<li><a href='#' onclick='setCol(2)'>2</a></li>"+
+    //     "<li><a href='#' onclick='setCol(3)'>3</a></li>"+
+    //     "<li><a href='#' onclick='setCol(4)'>4</a></li>"+
+    //     "<li><a href='#' onclick='setCol(5)'>5</a></li>"+
+    //     "<li><a href='#' onclick='setCol(6)'>6</a></li>"+
+    //     "</ul>"+
+    //     "</div>"+
+    //     "</div>";
     $(".active-settings-view").replaceWith(minigrid);
 }
 
@@ -125,7 +124,8 @@ function mkRowDiv(cols) {
             colDivs.push(mkColDiv("Links",[]));
         }
     }
-    return "<div class='row'>"+colDivs.join("")+"</div>";
+    var row = "<div class='row'>"+colDivs.join("")+"</div>";
+    return resizeCols( "md" , row, colDivs.length);
 }
 
 function setRow(rows) {
@@ -181,38 +181,16 @@ function modifyCol() {
 
 }
 
-function resizeCols(size,row){
+function resizeCols(size,row,cols){
     //TODO:Rewrite
-    for(i = 0; i < document.getElementsByClassName('row').length;i++) {
-        for(j = 0; j < document.getElementsByClassName('row')[i].children.length;j++) {
-            switch (parseInt(document.getElementById('col-drop').firstElementChild.innerHTML)){
-                case 1:
-                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-12 ';
-                    break;
-                case 2:
-                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-6 ';
-                    break;
-                case 3:
-                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-4 ';
-                    break;
-                case 4:
-                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-3 ';
-                    break;
-                case 5:
-                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-2 ';
-                    if(j==0) {
-                        document.getElementsByClassName('row')[i].children[j].className += 'col-md-offset-1 ';
-                    }
-                    break;
-                case 6:
-                    document.getElementsByClassName('row')[i].children[j].className = 'col-md-2 ';
-                    break;
-
-            }
-            document.getElementsByClassName('row')[i].children[j].className+='linkarea';
-
-        }
+    console.log("Resizing Columns in:\n"+row+"\nWhich is size "+size+" and has "+cols+" cols")
+    var res;
+    if (12%cols == 0){
+        res = row.split("<div><div class='inner'>").join("<div class='linkarea col-"+size+"-"+(12/cols)+"'><div class='inner'>");
+    }else{
+        res = row.split("<div><div class='inner'>").join("<div class='linkarea col-"+size+"-"+(12/cols)+" col-"+size+"-offset-1'><div class='inner'>");
     }
+    return res;
 }
 
 
